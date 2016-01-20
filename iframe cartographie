@@ -5,9 +5,11 @@
 			<title> Affichage carte </title>
 		</head>
 
-		<body>
-			<center><iframe width="1600" height="1200" frameBorder="0" src="http://umap.openstreetmap.fr/fr/map/carte_ptut_lumieres_67677?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&allowEdit=false&moreControl=true&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe><p><a href="http://umap.openstreetmap.fr/fr/map/carte_ptut_lumieres_67677">Voir en plein écran</a></p></center>			
-		</body>
+		<center><body>
+			<h1> Carte fête des lumières </h1>
+			<h2> en cours de création </h2>
+			<iframe width="1600" height="1200" frameBorder="0" src="http://umap.openstreetmap.fr/fr/map/carte_ptut_lumieres_67677?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&allowEdit=false&moreControl=true&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe><p><a href="http://umap.openstreetmap.fr/fr/map/carte_ptut_lumieres_67677">Voir en plein écran</a></p>		
+		</body></center>
 	</html>
 	
 	// Il faut prendre cette iframe et la placer la on l'on souhaite dans le site, changer la taille en fonction !
