@@ -24,6 +24,7 @@ Utilisation du framework Slim :
 Nos connaissances sur le framework:
 Après une installation difficile, on a finalement réussi. On est en train d’apprendre quelles sont ses particularités pour ensuite commencer directement à coder notre site web.
 Nous pensons faire une page d’accueil de présentation
+En raison du manque de temps l'utilisation de ce framework est abandonné.
 
 Suite aux différents ralentissements aux quels nous avons du faire face (changement de PTUT et non réponse de la part de notre correspondant chez les organisateurs de la fête des lumières) nous avons décidé de réutiliser le site de la fête des lumières et de le modifier avec le contenu qui selon nous serait celui nécessaire à la fois aux organisateur, aux artistes et aux visiteurs.
 
