@@ -1,0 +1,70 @@
+* {margin: 0 0;}
+html {font-family: Arial; background: url('images/lyon2.jpg') fixed no-repeat 50% 65%; font-size: 1em;}
+p, h1{color: white;}
+p{font-style: italic;}
+
+.general{background: rgba(20,20,20,0.8); width: 500px; margin:15px auto; text-align: center; padding: 15px; }
+.textIntro{color:  #336699;}
+.messageReussite{color: rgba(0, 163, 44, 0.9);}
+.messageErreur{color: rgba(215, 40, 40, 0.9);}
+
+
+/*NAV*/
+nav{text-align: center; color:white; margin-bottom: 15px; position: relative; right:15px;}
+nav ul li{display:inline-block;}
+nav ul li a{text-decoration: none; text-transform: uppercase; color: white; font-weight: bold;}
+nav ul li a:hover{color: #336699; text-decoration: none;}
+
+/*FORMULAIRE*/
+form {color: white;}
+form input{margin-top: 5px; margin-bottom: 5px;}
+form .inputText{color: #336699;}
+form .liste{color: grey;}
+form .liste:hover{color: #336699;}
+form .valider{margin: 15px 0 10px 0; background: #336699; color: white; border: none; border-radius: 5px; 
+	width: 100px; height: 25px;}	
+form .valider:hover{background: white; color: #336699;}
+.lienDeposeOeuvre {color: white; text-decoration: none}
+.lienDeposeOeuvre:hover{color: #336699;}
+
+/*PAGE JURY*/
+table{padding: 15px; margin: 0 auto; color: white; text-align: center;}
+table caption{text-transform: uppercase; font-weight: bold;}
+table th{background-color: #336699; padding: 5px; border-radius: 2px; }
+table td{border: solid 1px #336699; padding: 10px; background-color : rgba(0,0,0,0.6); border-radius: 2px;}
+table a{color: white; text-decoration: none;}
+table a:hover{color:#336699;}
+
+/*PAGE DETAILS*/
+.divDetail{border-bottom: solid 2px white; border-top: solid 2px white; margin-bottom: 15px; padding: 15px;}
+.divImageDetail img{width: 500px; height: auto;}
+.divDetail, .divImageDetail{display: inline-block; vertical-align: middle;}
+.lienRetour {color: white; text-decoration: none; margin-top: 10px;}
+.lienRetour:hover{color: #336699;}
+
+/*NAV ADMIN*/
+.navAdmin {text-align: center; color:white; margin-bottom: 15px; position: relative; right:15px;}
+.navAdmin ul li{display:inline-block; margin-right: 5px;}
+.navAdmin ul li a{text-decoration: none; color: white; }
+.navAdmin ul li a:hover{color: #336699; text-decoration: none;}
+
+
+
+/* Ecran minimum de 1024px */
+@media all and (max-width: 600px)
+
+{
+	
+	.general{font-size: 0.9em; width: 50%; min-width: 250px;}
+	.general table{font-size: 0.9em; max-width: 200px;}
+	/*table td:before { content: attr(data-title); }*/
+	
+	table, 
+	thead, 
+	
+	th, 
+	td, 
+	tr { 
+	display: block; 
+	}
+}
