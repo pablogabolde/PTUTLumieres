@@ -1,6 +1,7 @@
 <?php
 
 	require_once("connexion.php");
+    require_once("../annexe//PHPMailer-master/PHPMailerAutoload.php");
 
 	//On créer un objet connexion:
 	$c = new Connexion();
@@ -32,7 +33,50 @@
 			'partenaire' => $partenaire,
 			'nomPhoto' => $photoNom
 			));
-		header('Location: ../pages/deposeOeuvre.php?msg=1');
+        //On envoi les informations par mail
+        //PHPMailer Object
+        $mail = new PHPMailer;
+        $mail->IsSMTP();
+        $mail->Host = "smtp-mail.outlook.com";
+        $mail->Port = 587;
+        $mail->SMTPAuth = true;
+        $mail->Username = "pablog666@hotmail.fr";
+        $mail->Password = "pablo69580";
+        
+        //From email address and name
+        $mail->From = "pablog666@hotmail.fr";
+        $mail->FromName = "Artiste";
+
+        //To address and name
+        $mail->addAddress("pablo69580@gmail.com", "Admin");
+
+        //Address to which recipient will reply
+        $mail->addReplyTo("reply@yourdomain.com", "Reply");
+
+        //Send HTML or Plain Text email
+        $mail->isHTML(true);
+
+        $mail->Subject = "Subject Text";
+        $mail->Body = "<i>Mail body in HTML</i>";
+        $mail->AltBody = "This is the plain text version of the email content";
+
+        if(!$mail->send()) 
+        {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        } 
+        else 
+        {
+            echo "Message has been sent successfully";
+        }
+        /*$to = "pablo69580@gmail.com";
+        $sujet = "Dépos d'une oeuvre";
+        $msg = "Monsieur, \n Une oeuvre vient d'être déposée. \n Voici les informations: \n 
+        nom de l'oeuvre:".$nomOeuvre." \n nom de l'artiste:".$nomArtiste." \n lieu:".$lieu;
+        //mail($to, $sujet, $msg);
+        die(mail($to,$sujet,$msg));*/
+        
+        
+		//header('Location: ../pages/deposeOeuvre.php?msg=1');
 	}
 	else{	
 		header('Location: ../pages/deposeOeuvre.php?msg=-1');
