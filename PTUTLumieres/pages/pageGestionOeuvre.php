@@ -30,22 +30,22 @@
 		$requete = $connexion->query("SELECT * FROM `oeuvre_attente` WHERE idOeuvre='".$idOeuvreAttente."'");
 		$requete->setFetchMode(PDO::FETCH_OBJ);
 		$resultat = $requete->fetch();
-
+        
+        $idArtiste = $resultat->idArtiste;
 		$nomOeuvre = $resultat->nomOeuvre;
 		$nomArtiste = $resultat->nomArtiste;
 		$lieu = $resultat->lieu;
-		$partenaire = $resultat->partenaire;
 		$nomPhoto = $resultat->nomPhoto;
 
 		//On les insère dans la table validée
-		$resultats=$connexion->prepare("INSERT INTO `oeuvre_validee` (nomOeuvre, nomArtiste, lieu, partenaire, nomPhoto)
-		 VALUES (:nomOeuvre, :nomArtiste, :lieu, :partenaire, :nomPhoto)");
+		$resultats=$connexion->prepare("INSERT INTO `oeuvre_validee` (idArtiste, nomOeuvre, nomArtiste, lieu, nomPhoto)
+		 VALUES (:idArtiste, :nomOeuvre, :nomArtiste, :lieu, :nomPhoto)");
 
 		$resultats->execute(array(
+            'idArtiste' => $idArtiste,
 			'nomOeuvre' => $nomOeuvre,
 			'nomArtiste' => $nomArtiste,
 			'lieu' => $lieu,
-			'partenaire' => $partenaire,
 			'nomPhoto' => $nomPhoto
 			));
 
