@@ -49,6 +49,11 @@ table a:hover{color:#336699;}
 .navAdmin ul li a:hover{color: #336699; text-decoration: none;}
 
 
+/*BOUTON*/
+button{margin: 15px 0 10px 0; background: #336699; color: white; border: none; border-radius: 5px; 
+    width: 130px; height: 25px;}
+button:hover{background: white; color: #336699;}
+
 
 /* Ecran minimum de 1024px */
 @media all and (max-width: 600px)

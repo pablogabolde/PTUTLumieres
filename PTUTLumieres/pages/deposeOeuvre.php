@@ -25,13 +25,16 @@
 
 					<form method="POST" action="../templates/validationDeposeOeuvre.php" enctype="multipart/form-data">	
 						<label for="nomOeuvre"> Nom de votre Oeuvre* : </label> <br/>
-						<input class="inputText" type="text" name="nomOeuvre" /> <br/>
+						<input class="inputText" type="text" name="nomOeuvre" required put-placeholder="test"; /> <br/>
 
 						<label for="nomArtiste"> Votre nom d'artiste* : </label> <br/>
-						<input class="inputText" type="text" name="nomArtiste"/> <br/>
+						<input class="inputText" type="text" name="nomArtiste" required/> <br/>
 						
+                        <label for="mail"> Votre e-mail : </label> <br/>
+                        <input class="inputText" type="email" name="mail"  required/> <br/>
+                        
 						<label for="lieu"> Le lieu de votre Oeuvre* : </label> <br/>
-						<select class="liste" name="lieu" size="1">
+						<select class="liste" name="lieu" size="1" required>
 							<?php
 								//On récupère la liste de tous les lieux
 								$resultats=$connexion->query('SELECT * FROM `lieu` ORDER by idLieu');
@@ -47,12 +50,8 @@
 
 						</select> <br/>
 						
-
-						<label for="partenaire"> Votre partenaire* : </label> <br/>
-						<input class="inputText" type="text" name="partenaire" /> <br/>
-						
 						<label for="photoOeuvre"> Envoyez nous une photo de l'oeuvre* : </label><br/>
-						<input class="parcourir" type="file" name="photoOeuvre"/><br/>
+						<input class="parcourir" type="file" name="photoOeuvre" required/><br/>
 
 						<input class="valider" type="submit" value="VALIDER" /> <br/>
 					</form>
@@ -62,10 +61,7 @@
 					<?php
 						//On affiche le message si c'est bon ou non
 						if(isset($_GET['msg'])){
-							if($_GET['msg'] == -1){
-								echo '<p class="messageErreur"> Un ou plusieurs champs ne sont pas remplis ! </p>';
-							}
-							else if($_GET['msg'] == 1){
+							if($_GET['msg'] == 1){
 								echo '<p class="messageReussite"> Votre oeuvre à bien été ajouté, elle sera soumise au jury ! </p>';
 							}
 						}

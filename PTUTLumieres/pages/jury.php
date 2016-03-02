@@ -93,6 +93,8 @@
 						?>
 					</tr>
 				</table>
+        
+        <a href="../templates/envoiMail.php"> <button> Envoi des mails </button> </a> 
 
 				<?php
 					//Message en cas de suppression

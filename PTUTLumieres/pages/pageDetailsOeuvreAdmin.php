@@ -46,7 +46,6 @@
 					echo '<p> Nom de l\'oeuvre : '.$resultat->nomOeuvre.'</p> <br/>';
 					echo '<p> Nom de l\'artiste : '.$resultat->nomArtiste.'</p> <br/>';
 					echo '<p> Lieu d\'exposition : '.$resultat->lieu.'</p> <br/>';
-					echo '<p> Partenaire : '.$resultat->partenaire.'</p>';
 				?>
 			</div>
 			<div class="divImageDetail">
