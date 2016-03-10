@@ -46,6 +46,8 @@
 					echo '<p> Nom de l\'oeuvre : '.$resultat->nomOeuvre.'</p> <br/>';
 					echo '<p> Nom de l\'artiste : '.$resultat->nomArtiste.'</p> <br/>';
 					echo '<p> Lieu d\'exposition : '.$resultat->lieu.'</p> <br/>';
+                    echo '<p> Budget prévu : '.$resultat->budget.' €</p> <br/>';
+					echo '<p> Superficie : '.$resultat->superficie.' m²</p> <br/>';
 				?>
 			</div>
 			<div class="divImageDetail">

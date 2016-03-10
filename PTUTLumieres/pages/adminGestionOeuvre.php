@@ -15,7 +15,7 @@
 		<body>
 			
 			<div class="general">
-				<?php include("../templates/nav.html"); ?>
+				<?php include("../templates/navAdmin.html"); ?>
 				
 				<!-- Tableau des oeuvres à valider par l'admin-->
 				<table>
@@ -25,12 +25,12 @@
 						<th> Nom de l'oeuvre </th>
 						<th> Lieu </th>
 						<th> Détails </th>
-						<th> Ajouter </th>
+						<th> Action </th>
 					</tr>
 
 					<!-- Pour chaque ligne on récupère dans la base de donnée -->
 						<?php
-							$resultats=$connexion->query('SELECT idOeuvre, nomOeuvre, lieu FROM `oeuvre_attente` ORDER by idOeuvre');
+							$resultats=$connexion->query('SELECT idOeuvre, nomOeuvre, lieu FROM `oeuvre_admin` ORDER by idOeuvre');
 							$resultats->setFetchMode(PDO::FETCH_OBJ);
 							while($resultat = $resultats->fetch() )
 							{
@@ -38,10 +38,7 @@
 								echo '<tr> <td> '. $resultat->nomOeuvre. '</td>';
 								echo '<td> '. $resultat->lieu. '</td>';
 					
-								echo '<td> <a href="pageDetailsOeuvreJury.php?idOeuvreAttente='.$resultat->idOeuvre.'"> Détails </a> </td>';
-								echo '<td> <a onclick="return(confirm(\'Voulez-vous vraiment valider cette oeuvre?\'));"
-								 href="pageGestionOeuvre.php?idOeuvreAttente='.$resultat->idOeuvre.'">
-								  Ajouter </a> </td>';
+								echo '<td> <a href="pageDetailsOeuvreAdmin.php?idOeuvreAdmin='.$resultat->idOeuvre.'"> Détails </a> </td>';
 								echo '<td> <a onclick="return(confirm(\'Voulez-vous vraiment supprimer cette oeuvre?\'));"
 								 href="../templates/pageSuppressionOeuvre.php?idOeuvreAttente='.$resultat->idOeuvre.'">
 								  Supprimer </a> </td> </tr>';
@@ -55,7 +52,7 @@
 					//Message en cas d'ajout dans la table validée
 					if(isset($_GET['msg'])){
 						if($_GET['msg'] == 2){
-							echo "<p class=\"messageReussite\"> L'oeuvre a bien été validée </p>";
+							echo "<p class=\"messageReussite\"> Les mails ont bien été envoyés </p>";
 						}
 					}
 				?>

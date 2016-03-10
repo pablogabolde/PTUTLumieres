@@ -5,25 +5,13 @@
 	$c = new Connexion();
 	$connexion = $c->getConnexion();
 
-	//Si on veut voir les détails d'une oeuvre en attente
-	if(!empty($_GET['idOeuvreAttente'])){
-		$idOeuvreAttente = $_GET['idOeuvreAttente'];
+	if(!empty($_GET['idOeuvreAdmin'])){
+		$idOeuvreAdmin = $_GET['idOeuvreAdmin'];
 	}
 	
-	//Si on veut voir les détails d'une oeuvre validée
-	if(!empty($_GET['idOeuvreValidee'])){
-		$idOeuvreValidee = $_GET['idOeuvreValidee'];
-	}
 
-
-	//Si c'est une oeuvre validée
-	if(!empty($idOeuvreValidee)){
-		$resultats=$connexion->query("SELECT * FROM `oeuvre_validee` WHERE idOeuvre='".$idOeuvreValidee."'");
-	}
-
-	//Si c'est une oeuvre en attente
-	if(!empty($idOeuvreAttente)){
-		$resultats=$connexion->query("SELECT * FROM `oeuvre_attente` WHERE idOeuvre='".$idOeuvreAttente."'");
+	if(!empty($idOeuvreAdmin)){
+		$resultats=$connexion->query("SELECT * FROM `oeuvre_admin` WHERE idOeuvre='".$idOeuvreAdmin."'");
 	}
 
 	
@@ -46,13 +34,16 @@
 					echo '<p> Nom de l\'oeuvre : '.$resultat->nomOeuvre.'</p> <br/>';
 					echo '<p> Nom de l\'artiste : '.$resultat->nomArtiste.'</p> <br/>';
 					echo '<p> Lieu d\'exposition : '.$resultat->lieu.'</p> <br/>';
+					echo '<p> Budget prévu : '.$resultat->budget.' €</p> <br/>';
+					echo '<p> Superficie : '.$resultat->superficie.' m²</p> <br/>';
+                    
 				?>
 			</div>
 			<div class="divImageDetail">
 				<?php
 					echo '<img src="../vue/uploads/'.$resultat->nomPhoto.'" />';
 				?>
-				<a class="lienRetour" href="admin.php"> Revenir en arrière </a>
+				<a class="lienRetour" href="adminGestionOeuvre.php"> Revenir en arrière </a>
 			</div>
 
 
