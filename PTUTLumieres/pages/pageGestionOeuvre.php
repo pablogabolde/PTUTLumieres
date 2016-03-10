@@ -25,8 +25,10 @@
 
 	//Pour ajouter l'oeuvre non validée dans les validées
 	if (!empty($idOeuvreAttente)){
-		
-		//On récupère tous les attributs de la ligne
+		 $resultats=$connexion->prepare("INSERT INTO `oeuvre_validee` SELECT * FROM `oeuvre_attente`WHERE idOeuvre='".$idOeuvreAttente."'");
+         $resultats->execute();
+        
+		/*//On récupère tous les attributs de la ligne
 		$requete = $connexion->query("SELECT * FROM `oeuvre_attente` WHERE idOeuvre='".$idOeuvreAttente."'");
 		$requete->setFetchMode(PDO::FETCH_OBJ);
 		$resultat = $requete->fetch();
@@ -47,7 +49,7 @@
 			'nomArtiste' => $nomArtiste,
 			'lieu' => $lieu,
 			'nomPhoto' => $nomPhoto
-			));
+			));*/
 
 		//On les supprime de la table des non validées
 		$connexion->exec("DELETE FROM `oeuvre_attente` WHERE idOeuvre='".$idOeuvreAttente."'");

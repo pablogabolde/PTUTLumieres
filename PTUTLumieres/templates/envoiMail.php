@@ -1,4 +1,4 @@
-<!--Cette page permet d'ajouter l'artiste et l'oeuvre à validée à la base de donnée-->
+<!--Cette page permet d'envoyer des mails aux artistes dont les oeuvrs sont validés-->
 <?php
 
 	require_once("connexion.php");
@@ -7,6 +7,16 @@
 	$c = new Connexion();
 	$connexion = $c->getConnexion();
     
+    // Le message
+    $message = "testdefolie tu as vu";
+
+    // Dans le cas où nos lignes comportent plus de 70 caractères, nous les coupons en utilisant wordwrap()
+    $message = wordwrap($message, 70, "\r\n");
+
+    // Envoi du mail
+    die(mail('pablo69580@gmail.com', 'Mon Sujet', $message));
+
+
 	/*//On récupère les variables du formulaire
 	$nomOeuvre = $_POST['nomOeuvre'];
 	$nomArtiste = $_POST['nomArtiste'];
