@@ -2,9 +2,8 @@
 2. L'admin a un bouton envoyer les mails pour ainsi valider toutes les oeuvres.
 
 FORMULAIRE :
-1. Lors de la validation de l'envoi ==> doc qui se télécharge automatiquement avec le message qui précise de remplir et 
-de le renvoyer à l'add suivante
+1. Lors de la validation de l'envoi ==> doc qui se télécharge automatiquement avec le message qui précise de remplir et de le renvoyer à l'add suivante
 2. Rajouter une case budget prévu
 3. Rajouter une case Société ?OUI ou NON et si OUI ca affiche le nom de la société
 4. Rajouter une case Superficie
-5 Rajouter case poids ? OUI ou NON
+5 Rajouter case poid ? OUI ou NON

@@ -41,7 +41,7 @@
                         <input type="radio" name="societeChoix" checked> Non </input> <br/>
                         
                         <label for="societe"> Le nom de votre société : </label> <br/>
-                        <input class="inputText" id="societe" type="text" name="societe" required disabled /> <br/>
+                        <input class="inputText" type="text" name="societe" required disabled /> <br/>
                         
                         <label for="superficie"> La superficie estimée : </label> <br/> 
                         <input class="inputText" min="0" type="number" name="superficie" required/> <br/> 
@@ -51,7 +51,7 @@
                         <input type="radio" name="poidsChoix" checked> Non </input> <br/>
         
                         <label for="poids"> Entrez le poids : </label> <br/>
-                        <input class="inputText" id="poids" type="number" min="0"  name="poids" required disabled/> <br/>
+                        <input class="inputText" type="number" min="0"  name="poids" required disabled/> <br/>
                     
 						<label for="lieu"> Le lieu de votre Oeuvre : </label> <br/>
 						<select class="liste" name="lieu" size="1" required>
@@ -71,7 +71,7 @@
 						</select> <br/>
 						
 						<label for="photoOeuvre"> Envoyez nous une photo de l'oeuvre : </label><br/>
-						<input class="parcourir" type="file" accept="image/*" name="photoOeuvre" required/><br/>
+						<input class="parcourir" type="file" name="photoOeuvre" required/><br/>
 
 						<input class="valider" type="submit" value="VALIDER" /> <br/>
                     </form>
@@ -86,8 +86,6 @@
 					?>
 				</div>
 			</div>
-
-            <script src="../vue/javascript.js"></script>
 
 
 		</body>
