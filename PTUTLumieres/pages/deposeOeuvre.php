@@ -33,7 +33,7 @@
                         <label for="mail"> Votre e-mail : </label> <br/>
                         <input class="inputText" type="email" name="mail"  required/> <br/>
                         
-                        <label for="budget"> Le budget estimé : </label> <br/>
+                        <label for="budget"> Le budget estimé (€) : </label> <br/>
                         <input class="inputText" min="0" type="number" name="budget" required/> <br/>
                         
                         <label for="societeChoix"> Appartenez-vous à une société ? </label> <br/>
@@ -41,17 +41,17 @@
                         <input type="radio" name="societeChoix" checked> Non </input> <br/>
                         
                         <label for="societe"> Le nom de votre société : </label> <br/>
-                        <input class="inputText" type="text" name="societe" required disabled /> <br/>
+                        <input class="inputText" id="societe" type="text" name="societe" required disabled /> <br/>
                         
-                        <label for="superficie"> La superficie estimée : </label> <br/> 
+                        <label for="superficie"> La superficie estimée (m²) : </label> <br/> 
                         <input class="inputText" min="0" type="number" name="superficie" required/> <br/> 
                         
                         <label for="poidsChoix"> Avez-vous le poids de votre oeuvre ? </label> <br/>
                         <input type="radio" name="poidsChoix"> Oui </input>
                         <input type="radio" name="poidsChoix" checked> Non </input> <br/>
         
-                        <label for="poids"> Entrez le poids : </label> <br/>
-                        <input class="inputText" type="number" min="0"  name="poids" required disabled/> <br/>
+                        <label for="poids"> Entrez le poids (Kg) : </label> <br/>
+                        <input class="inputText" id="poids" type="number" min="0"  name="poids" required disabled/> <br/>
                     
 						<label for="lieu"> Le lieu de votre Oeuvre : </label> <br/>
 						<select class="liste" name="lieu" size="1" required>
@@ -86,7 +86,8 @@
 					?>
 				</div>
 			</div>
-
+            
+            <script src="../vue/javascript.js"></script>
 
 		</body>
 	</html>
