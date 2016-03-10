@@ -1,10 +1,10 @@
 A FAIRE:
-2. L'admin a un bouton envoyer les mails pour ainsi valider toutes les oeuvres.
 
 
 
 
-OK :
+
+DONE:
 1. Lors de la validation de l'envoi ==> doc qui se télécharge automatiquement avec le message qui précise
 de remplir et de le renvoyer à l'add suivante
 2. Rajouter une case budget prévu 
@@ -14,3 +14,4 @@ de remplir et de le renvoyer à l'add suivante
 
 1. Liste des oeuvres conseillées par le jury (dans jury) il peut valider ce qui envoi toutes ces 
 oeuvres dans la liste de l'admin
+2. L'admin a un bouton envoyer les mails pour ainsi valider toutes les oeuvres.

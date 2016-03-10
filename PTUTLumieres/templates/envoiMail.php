@@ -7,47 +7,33 @@
 	$c = new Connexion();
 	$connexion = $c->getConnexion();
     
-    // Le message
-    $message = "testdefolie tu as vu";
+    //on séléctionne tous les numéros artiste dans la table oeuvre_admin
+    $resultats=$connexion->query('SELECT idArtiste, nomOeuvre FROM `oeuvre_admin` ORDER BY idOeuvre');
+    $resultats->setFetchMode(PDO::FETCH_OBJ);
+    while($resultat = $resultats->fetch() )
+    {
+        $idArtiste = $resultat->idArtiste;
+        $nomOeuvre = $resultat->nomOeuvre;
+        
+        //Pour chaque artiste on récupère son mail
+        $resultats2=$connexion->query('SELECT mailArtiste FROM `artiste` WHERE idArtiste ='.$idArtiste);
+        $resultats2->setFetchMode(PDO::FETCH_OBJ);
+        while($resultat2 = $resultats2->fetch() )
+        {
+            $mail = $resultat2->mailArtiste;
+            //On envoi le même message pour chaque mail
+            
+            $message = 'Bonjour, votre oeuvre '.$nomOeuvre.' a été selectionnée pour participer à la fête des Lumières.';
+            // Dans le cas où nos lignes comportent plus de 70 caractères, nous les coupons en utilisant wordwrap()
+            
+            $message = wordwrap($message, 70, "\r\n");
 
-    // Dans le cas où nos lignes comportent plus de 70 caractères, nous les coupons en utilisant wordwrap()
-    $message = wordwrap($message, 70, "\r\n");
+            // Envoi du mail
+            mail($mail, 'Validation oeuvre fête des lumières', $message);
+        }
+    }
 
-    // Envoi du mail
-    die(mail('pablo69580@gmail.com', 'Mon Sujet', $message));
-
-
-	/*//On récupère les variables du formulaire
-	$nomOeuvre = $_POST['nomOeuvre'];
-	$nomArtiste = $_POST['nomArtiste'];
-    $mailArtiste = $_POST['mail'];
-	$lieu = $_POST['lieu'];
-	
-	//On récupère le chemin et le nom de la photo
-	$photoChemin = $_FILES['photoOeuvre']['tmp_name'];
-	$photoNom = $_FILES['photoOeuvre']['name'];
-
-    //on transfert le fichier photo dans le dossier uploads
-    move_uploaded_file($photoChemin, '../vue/uploads/' . basename($photoNom));
-
-
-    //On insert l'artiste correspondant dans la base de donnée
-    $resultat2=$connexion->prepare("INSERT INTO `artiste` (nomArtiste, mailArtiste)
-     VALUES (:nomArtiste, :mailArtiste)");
-    $resultat2->execute(array(
-        'nomArtiste' => $nomArtiste,
-        'mailArtiste' => $mailArtiste,
-        ));
-
-    //On insert l'oeuvre à valider dans la base de donnée
-    $resultats=$connexion->prepare("INSERT INTO `oeuvre_attente` (nomOeuvre, nomArtiste, lieu, nomPhoto)
-     VALUES (:nomOeuvre, :nomArtiste, :lieu, :nomPhoto)");
-    $resultats->execute(array(
-        'nomOeuvre' => $nomOeuvre,
-        'nomArtiste' => $nomArtiste,
-        'lieu' => $lieu,
-        'nomPhoto' => $photoNom
-        ));
-*/
-	
+    //On redirige vers la page 
+    header('Location: ../pages/deposeOeuvre.php?msg=2');
+    
 ?>

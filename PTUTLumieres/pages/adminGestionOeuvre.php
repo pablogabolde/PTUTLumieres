@@ -40,7 +40,7 @@
 					
 								echo '<td> <a href="pageDetailsOeuvreAdmin.php?idOeuvreAdmin='.$resultat->idOeuvre.'"> Détails </a> </td>';
 								echo '<td> <a onclick="return(confirm(\'Voulez-vous vraiment supprimer cette oeuvre?\'));"
-								 href="../templates/pageSuppressionOeuvre.php?idOeuvreAttente='.$resultat->idOeuvre.'">
+								 href="../templates/pageSuppressionOeuvreAdmin.php?idOeuvreAdmin='.$resultat->idOeuvre.'">
 								  Supprimer </a> </td> </tr>';
 							}
 							$resultats->closeCursor();
