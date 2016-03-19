@@ -10,6 +10,8 @@
 			
 			<div class="general">
 				<div class="bloc">
+                    
+                    <?php include("../templates/nav.html"); ?>
 					<h1> CONNEXION </h1>
 
 					<form method="POST" action="../templates/verif.php" >	
