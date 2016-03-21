@@ -52,15 +52,12 @@
 					//Message en cas d'ajout dans la table validée
 					if(isset($_GET['msg'])){
 						if($_GET['msg'] == 2){
-							echo "<p class=\"messageReussite\"> Les mails ont bien été envoyés </p>";
+							echo "<p class=\"messageReussite\"> Les mails ont bien été envoyés aux artistes. </p>";
 						}
 					}
 				?>
                 
-                <a href="../templates/envoiMail.php"> <button> Envoi des mails </button> </a>
-         
-
-				<?php
+                <?php
 					//Message en cas de suppression
 					if(isset($_GET['msg'])){
 						if($_GET['msg'] == 1){
@@ -68,6 +65,10 @@
 						}
 					}
 				?>
+                <a href="../templates/envoiMail.php"> <button> Envoi des mails </button> </a>
+         
+
+				
 			</div>
 		</body>
 	</html>

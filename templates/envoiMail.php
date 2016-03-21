@@ -34,6 +34,6 @@
     }
 
     //On redirige vers la page 
-    header('Location: ../pages/deposeOeuvre.php?msg=2');
+    header('Location: ../pages/adminGestionOeuvre.php?msg=2');
     
 ?>

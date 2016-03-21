@@ -26,6 +26,7 @@
 						<th> Lieu </th>
 						<th> Détails </th>
 						<th> Ajouter </th>
+                        <th> Action </th>
 					</tr>
 
 					<!-- Pour chaque ligne on récupère dans la base de donnée -->
@@ -71,7 +72,7 @@
 						<th> Nom de l'oeuvre </th>
 						<th> Lieu </th>
 						<th> Détails </th>
-						<th> Supprimer </th>
+						<th> Action </th>
 					</tr>
 
 					<!-- Pour chaque ligne on récupère dans la base de donnée -->
